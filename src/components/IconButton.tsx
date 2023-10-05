@@ -11,17 +11,17 @@ const styles = StyleSheet.create({
   },
 });
 
-const IconButton = ({Icon, selected, index, onCheck}) => {
+const IconButton = ({Icon, selected, index, onCheck, selectedColor}) => {
   const handlePress = useCallback(() => onCheck(index));
 
   const containerStyle = useMemo(
     () => [
       {
-        backgroundColor: selected ? '#008C50' : 'grey',
+        backgroundColor: selected ? selectedColor : 'grey',
       },
       styles.iconButton,
     ],
-    [selected],
+    [selected, selectedColor],
   );
 
   return (

@@ -1,14 +1,7 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, {useCallback, useMemo, useState} from 'react';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#BBD030',
-    borderRadius: 8,
-    flexDirection: 'row',
-    padding: 4,
-    alignItems: 'center',
-  },
   titleText: {
     fontWeight: '700',
     fontSize: 15,
@@ -24,14 +17,31 @@ const styles = StyleSheet.create({
 });
 
 const NotificationItem = ({Icon, title, description}) => {
+  const [read, setRead] = useState(false);
+
+  const containerStyle = useMemo(
+    () => ({
+      backgroundColor: read ? '#BBD030' : '#E5F869',
+      borderRadius: 8,
+      flexDirection: 'row',
+      padding: 4,
+      alignItems: 'center',
+    }),
+    [read],
+  );
+
+  const handlePress = useCallback(() => {
+    setRead(true);
+  }, []);
+
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={containerStyle} onPress={handlePress}>
       {Icon}
       <View style={styles.textContainer}>
         <Text style={styles.titleText}>{title}</Text>
         <Text style={styles.text}>{description}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

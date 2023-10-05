@@ -31,17 +31,20 @@ const IconGroupSelector = () => {
       <IconButton
         Icon={BadSad}
         index={0}
+        selectedColor={'#FF0000'}
         onCheck={handleSelect}
         selected={selected[0]}
       />
       <IconButton
         Icon={Medium}
+        selectedColor={'#EBFF00'}
         index={1}
         onCheck={handleSelect}
         selected={selected[1]}
       />
       <IconButton
         Icon={Happy}
+        selectedColor={'#2BD40F'}
         index={2}
         onCheck={handleSelect}
         selected={selected[2]}
