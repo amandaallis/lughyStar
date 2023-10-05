@@ -4,9 +4,13 @@ import DrawerNavigator from './DrawerNavigator';
 
 const Stack = createStackNavigator();
 
+const OPTIONS = {
+  headerShown: false,
+};
+
 const MainNavigator = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={OPTIONS}>
       <Stack.Screen name="DrawerNavigator" component={DrawerNavigator} />
     </Stack.Navigator>
   );
