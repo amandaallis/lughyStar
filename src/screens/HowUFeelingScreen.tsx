@@ -1,19 +1,9 @@
 import React, {useCallback} from 'react';
-import {
-  Button,
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Button, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import Header from '../components/Header';
 import {useNavigation} from '@react-navigation/native';
-
-const sadImage = require('../images/sadYellow.png');
-const neutralImage = require('../images/neutralYellow.png');
-const happyImage = require('../images/happyYellow.png');
+import ImageGroupSelector from '../components/ImageGroupSelector';
+import Footer from '../components/Footer';
 
 const styles = StyleSheet.create({
   container: {
@@ -62,17 +52,7 @@ const HowUFeelingScreen = () => {
       <View style={styles.headerContainer}>
         <Text style={styles.text}>COMO ESTOU ME SENTINDO HOJE:</Text>
       </View>
-      <View style={styles.content}>
-        <TouchableOpacity>
-          <Image source={sadImage} />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image source={neutralImage} />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image source={happyImage} />
-        </TouchableOpacity>
-      </View>
+      <ImageGroupSelector />
       <View style={styles.buttonContainer}>
         <View style={styles.button}>
           <Button
@@ -82,6 +62,7 @@ const HowUFeelingScreen = () => {
           />
         </View>
       </View>
+      <Footer />
     </SafeAreaView>
   );
 };

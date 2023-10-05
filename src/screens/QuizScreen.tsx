@@ -1,6 +1,13 @@
 import React, {useCallback} from 'react';
 import Footer from '../components/Footer';
-import {Button, SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {
+  Button,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
 import Header from '../components/Header';
 import YNSwitch from '../components/YNSwitch';
 import {useNavigation} from '@react-navigation/native';
@@ -23,8 +30,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   questionContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
     gap: 16,
     paddingTop: 16,
     paddingHorizontal: 24,
@@ -38,13 +43,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  input: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 20,
+    width: 200,
+    color: 'black',
+  },
+  switchInput: {
+    flexDirection: 'row',
+    gap: 16,
+  },
 });
 
 const QuizScreen = () => {
   const navigation = useNavigation();
 
-  const navigateToDashboard = useCallback(() => {
-    navigation.navigate('Dashboard');
+  const navigateToSuccessQuiz = useCallback(() => {
+    navigation.navigate('SuccessQuiz');
   }, [navigation]);
 
   return (
@@ -55,23 +71,41 @@ const QuizScreen = () => {
       </View>
       <View style={styles.container}>
         <View style={styles.questionContainer}>
-          <Text style={styles.text}>Tem ido ao médico regularmente?</Text>
+          <Text style={styles.text}>Quando foi a sua última consulta?</Text>
+          <TextInput
+            placeholderTextColor="gray"
+            placeholder="DD/MM/AAAA"
+            style={styles.input}
+          />
+        </View>
+        <View style={styles.questionContainer}>
+          <Text style={styles.text}>Realizou exames recentemente?</Text>
           <YNSwitch />
         </View>
         <View style={styles.questionContainer}>
-          <Text style={styles.text}>Pergunta 1?</Text>
+          <Text style={styles.text}>
+            Utiliza alguma medicação de uso continuo?
+          </Text>
+          <View style={styles.switchInput}>
+            <YNSwitch />
+            <TextInput
+              placeholderTextColor="gray"
+              placeholder="Se sim, quais?"
+              style={styles.input}
+            />
+          </View>
+        </View>
+        <View style={styles.questionContainer}>
+          <Text style={styles.text}>
+            Você está realizando atividades físicas?
+          </Text>
           <YNSwitch />
         </View>
         <View style={styles.questionContainer}>
-          <Text style={styles.text}>Pergunta 2?</Text>
-          <YNSwitch />
-        </View>
-        <View style={styles.questionContainer}>
-          <Text style={styles.text}>Pergunta 3?</Text>
-          <YNSwitch />
-        </View>
-        <View style={styles.questionContainer}>
-          <Text style={styles.text}>Pergunta 4?</Text>
+          <Text style={styles.text}>
+            Está realizando acompanhamento com equipe multiprofissional? (Ex:
+            Nutricionista, Psicólogo.)
+          </Text>
           <YNSwitch />
         </View>
         <View style={styles.buttonContainer}>
@@ -79,7 +113,7 @@ const QuizScreen = () => {
             <Button
               color="#008C50"
               title="Enviar"
-              onPress={navigateToDashboard}
+              onPress={navigateToSuccessQuiz}
             />
           </View>
         </View>

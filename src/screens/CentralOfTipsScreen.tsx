@@ -43,32 +43,22 @@ const CentralOfTipsScreen = () => {
           />
           <NotificationItem
             Icon={<Image source={infoImage} />}
-            title={'Saiba como melhorar ...'}
+            title={'Vamos nos animar?'}
             description={'Aqui seguem algumas dicas para...'}
           />
           <NotificationItem
             Icon={<Image source={infoImage} />}
-            title={'Saiba como melhorar ...'}
+            title={'Você está animado hoje. Que bom!'}
             description={'Aqui seguem algumas dicas para...'}
           />
           <NotificationItem
             Icon={<Image source={infoImage} />}
-            title={'Saiba como melhorar ...'}
-            description={'Aqui seguem algumas dicas para...'}
+            title={'Especialmente para você!'}
+            description={'Aqui seguem alguns conteúdos...'}
           />
           <NotificationItem
             Icon={<Image source={infoImage} />}
-            title={'Saiba como melhorar ...'}
-            description={'Aqui seguem algumas dicas para...'}
-          />
-          <NotificationItem
-            Icon={<Image source={infoImage} />}
-            title={'Saiba como melhorar ...'}
-            description={'Aqui seguem algumas dicas para...'}
-          />
-          <NotificationItem
-            Icon={<Image source={infoImage} />}
-            title={'Saiba como melhorar ...'}
+            title={'Uma dica pra você...'}
             description={'Aqui seguem algumas dicas para...'}
           />
         </View>

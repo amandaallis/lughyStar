@@ -10,6 +10,7 @@ import FeedbackStorieThreeScreen from '../screens/FeedbackStorieThreeScreen';
 import QuizScreen from '../screens/QuizScreen';
 import NotificationsScreen from '../screens/NotificationsScreen';
 import CentralOfTipsScreen from '../screens/CentralOfTipsScreen';
+import SuccessQuizScreen from '../screens/SuccessQuizScreen';
 
 const Stack = createStackNavigator();
 
@@ -35,6 +36,7 @@ const AppNavigator = () => (
     <Stack.Screen name="Quiz" component={QuizScreen} />
     <Stack.Screen name="Notification" component={NotificationsScreen} />
     <Stack.Screen name="CentralOfTips" component={CentralOfTipsScreen} />
+    <Stack.Screen name="SuccessQuiz" component={SuccessQuizScreen} />
   </Stack.Navigator>
 );
 

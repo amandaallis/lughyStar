@@ -1,5 +1,5 @@
 import React, {useCallback} from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
@@ -9,11 +9,15 @@ import Footer from '../components/Footer';
 const gameImage = require('../images/game.png');
 const happyImage = require('../images/happyFace.png');
 const seriousImage = require('../images/seriousFace.png');
-const brainHeartImage = require('../images/brainHeart.png');
+const brainHeartImage = require('../images/logo.png');
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  logoContainer: {
+    paddingTop: 16,
+    alignItems: 'center',
   },
   header: {
     height: 60,
@@ -39,8 +43,16 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
-    alignContent: 'center',
+  },
+  textContainer: {
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
+  },
+  text: {
+    color: 'black',
+    fontWeight: '700',
+    fontSize: 32,
   },
 });
 
@@ -58,8 +70,11 @@ const DashboardScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Header />
-      <View>
+      <View style={styles.logoContainer}>
         <Image source={brainHeartImage} />
+      </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.text}>Escolha um jogo!</Text>
       </View>
       <View style={styles.content}>
         <TouchableOpacity onPress={navigateToHowUFeeling}>

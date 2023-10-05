@@ -38,6 +38,35 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
   },
+  contactCardMainText: {
+    fontSize: 20,
+    fontWeight: '700',
+    textAlign: 'center',
+    color: 'black',
+  },
+  contactCardSubText: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: 'black',
+    textAlign: 'center',
+  },
+  contactCardLastText: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: 'black',
+    textAlign: 'center',
+  },
+  contactCard: {
+    flex: 1,
+    backgroundColor: '#BBD030',
+    justifyContent: 'center',
+    alignSelf: 'center',
+    marginHorizontal: 40,
+    width: 280,
+    borderRadius: 8,
+    marginTop: 40,
+    padding: 8,
+  },
 });
 
 const TipScreen = () => {
@@ -67,13 +96,17 @@ const TipScreen = () => {
             Vivamus felis urna, blandit eget massa eget, cursus pellentesque
             nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </Text>
-          <Text style={styles.text}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            laoreet justo ut luctus fermentum. Donec placerat quis massa id
-            vulputate. Suspendisse porta velit vel ipsum fermentum fringilla.
-            Vivamus felis urna, blandit eget massa eget, cursus pellentesque
-            nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Text>
+          <View style={styles.contactCard}>
+            <Text style={styles.contactCardMainText}>
+              Quer falar com alguém?
+            </Text>
+            <Text style={styles.contactCardSubText}>
+              Ligue para xx xxxx-xxxx
+            </Text>
+            <Text style={styles.contactCardLastText}>
+              Programa de Gerenciamento de Saúde
+            </Text>
+          </View>
           <View style={styles.buttonContainer}>
             <Button color="#008C50" title="OK" onPress={navigateToDashboard} />
           </View>

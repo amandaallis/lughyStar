@@ -37,28 +37,28 @@ const NotificationsScreen = () => {
           <Text style={styles.text}>Central de notificações</Text>
           <NotificationItem
             Icon={<Notification />}
-            title={'Sua pressão está alterada'}
-            description={'Aqui seguem algumas dicas ...'}
+            title={'Opa, tem algo errado por ai? Bora jogar?'}
+            description={'Vamos jogar...'}
           />
           <NotificationItem
             Icon={<Notification />}
-            title={'Sua pressão está alterada'}
-            description={'Aqui seguem algumas dicas ...'}
+            title={'Vem jogar comigo.'}
+            description={'Vamos jogar...'}
           />
           <NotificationItem
             Icon={<Notification />}
-            title={'Sua pressão está alterada'}
-            description={'Aqui seguem algumas dicas ...'}
+            title={'Nos ajude a cuidar de você! :)'}
+            description={'Lembre-se de preencher seu...'}
           />
           <NotificationItem
             Icon={<Notification />}
-            title={'Sua pressão está alterada'}
-            description={'Aqui seguem algumas dicas ...'}
+            title={'É rapidinho!'}
+            description={'Bora preencher seu formulário...'}
           />
           <NotificationItem
             Icon={<Notification />}
-            title={'Sua pressão está alterada'}
-            description={'Aqui seguem algumas dicas ...'}
+            title={'Bora se divertir e se cuidar?'}
+            description={'Vamos jogar...'}
           />
         </View>
       </View>
